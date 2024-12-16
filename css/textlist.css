@@ -303,7 +303,7 @@ body::-webkit-scrollbar {
 	.nav {
 	width: 88%;
 	height: auto;
-	top: 78%;
+	top: 74%;
 	padding-left: 10%;
 	}
 	.nav a {
@@ -352,7 +352,7 @@ body::-webkit-scrollbar {
 		line-height: 1.8rem;
 	height: 100%;
 	overflow-y:scroll;
-		padding-top: 12vh;
+		padding-top: 8vh;
 }
 	.bodytext p2 {
 		display: flex;
