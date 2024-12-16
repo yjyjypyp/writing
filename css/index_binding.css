@@ -1,0 +1,58 @@
+@charset "UTF-8";
+/* CSS Document */
+/* 배경 컨테이너 */
+.bg {
+  position: relative;
+  width: 100vw;
+  height: 100vh; /* 전체 화면 높이 */
+  background-color: #f7f7f7; /* 배경색 */
+  overflow: hidden;
+}
+/* 전체 컨테이너 */
+.container {
+  position: absolute;
+  left: 0; /* 좌측 정렬 */
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* 위아래 균등하게 배치 */
+  height: 100%;
+  width: 100%;
+}
+
+/* 바인딩 요소 감싸는 div */
+.binding {
+  position: relative;
+  height: 40px; /* 고정된 크기 */
+  width: 40px; /* 고정된 크기 */
+  max-height: 80px; /* 최대 높이 제한 */
+  max-width: 80px; /* 최대 너비 제한 */
+}
+/* 동그라미 구멍 */
+.punch-hole {
+  position: absolute;
+  top: 40%;
+  left: 40%;
+  width: 15px; /* 고정된 크기 */
+  height: 15px; /* 고정된 크기 */
+  background-color: black;
+  border: 1px solid #000000;
+  border-radius: 50%; /* 동그라미 모양 유지 */
+  transform: translate(-50%, -50%); /* 정확한 중앙 정렬 */
+  z-index: 1;
+}
+
+/* 바인딩 사각형 */
+.binding-line {
+  position: absolute;
+  top: 0rem;
+  left: 0rem;
+  width: 8px; /* 고정된 크기 */
+  height: 100%; /* 부모 요소의 높이에 맞춰 */
+  background-color: black;
+	border: 1px solid black;
+	border-radius: 25%; /* 동그라미 모양 유지 */
+  transform: rotate(75deg); /* 기울임 유지 */
+  z-index: 2; /* 사각형이 위로 */
+}
