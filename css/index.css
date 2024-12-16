@@ -9,7 +9,7 @@ html, body {
 }
 body {
 	background-color: blue;
-	overflow: hidden;
+	overflow-x: hidden;
 }
 body::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Edge */
@@ -205,6 +205,25 @@ body::-webkit-scrollbar {
 }
 @media (min-width: 768px) and (max-width: 1024px) {
 	/*--tablet css--*/
+	.hole {
+			left: 50%;/* 원을 위로 */
+        }
+	.spring {
+		left: -15%;
+	}
+	.nav {
+		top: 75%;
+	}
+	.minitext1 {
+		display: none;
+	}
+	.minitext2 {
+    grid-column: 3;   /* 6번째 칸에 배치 */
+	}
+	.bodytext {
+	grid-column: 4 / span 7;  /* 8-10번째 칸에 걸쳐 배치 */
+	}
+}
 }
 @media (max-width: 767px) {
 	/*-mobile css-*/
