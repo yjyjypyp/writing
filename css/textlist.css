@@ -348,10 +348,11 @@ body::-webkit-scrollbar {
 	grid-column: 1 / span 3;  /* 8-10번째 칸에 걸쳐 배치 */
 	padding-right: 3%;
 	font-family: 'Noto Sans KR', 'sans-serif';
-	font-size: 1.6rem;
+	font-size: 1.5rem;
+		line-height: 1.8rem;
 	height: 100%;
 	overflow-y:scroll;
-		padding-top: 6vh;
+		padding-top: 12vh;
 }
 	.bodytext p2 {
 		display: flex;
