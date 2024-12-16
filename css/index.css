@@ -8,7 +8,7 @@ html, body {
 	font-size: 15px;
 }
 body {
-	background-color: blue;
+	background-color: white;
 	overflow: hidden;
 }
 body::-webkit-scrollbar {
