@@ -9,7 +9,7 @@ html, body {
 }
 body {
 	background-color: blue;
-	overflow-x: hidden;
+	overflow: hidden;
 }
 body::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Edge */
@@ -224,7 +224,6 @@ body::-webkit-scrollbar {
 	grid-column: 4 / span 7;  /* 8-10번째 칸에 걸쳐 배치 */
 	}
 }
-}
 @media (max-width: 767px) {
 	/*-mobile css-*/
 	.hole {
@@ -265,9 +264,9 @@ body::-webkit-scrollbar {
 	padding-right: 4%;
 }
 	.nav {
-	width: 88%;
+	width: 98%;
 	height: auto;
-	top: 80%;
+	top: 78%;
 	padding-left: 10%;
 	}
 	.nav a {
@@ -305,6 +304,9 @@ body::-webkit-scrollbar {
     grid-column: 2;   /* 6번째 칸에 배치 */
 	text-align: right;
 }
+	.hashtags {
+		display: none;
+	}
 	.bodytext {
 	grid-column: 1 / span 3;  /* 8-10번째 칸에 걸쳐 배치 */
 	padding-right: 3%;
