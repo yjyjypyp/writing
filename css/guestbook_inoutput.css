@@ -66,6 +66,7 @@ button:hover {
   word-wrap: break-word; /* 긴 글을 자동으로 줄바꿈 처리 */
   overflow-wrap: break-word; /* 추가적인 줄바꿈 처리 */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+	font-family: "Helvetica Neue", "Noto Sans KR", sans-serif;
 }
 
 .delete-button {
