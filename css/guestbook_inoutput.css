@@ -84,6 +84,10 @@ button:hover {
 	background-color: black;
 }
 @media (max-width: 767px) {
+	.input-section {
+  	margin-bottom: 3vh;
+	margin-top: 3vh;
+}
 	/* 포스트잇 컨테이너 스타일 */
 .post-it-board {
   display: flex;
