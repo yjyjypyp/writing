@@ -161,20 +161,20 @@ body::-webkit-scrollbar {
 	grid-column: 7 ;
 	text-align: left;
 }
-.minitext1 a {
+.section-contents a {
 	color: black;
 	text-decoration: none;
 	cursor: pointer;
 }
-.minitext1 a:hover {
+.section-contents a:hover {
 	text-decoration: underline;
 	cursor: pointer;
 }
-.minitext1 a:active {
+.section-contents a:active {
 	text-decoration: underline;
 	cursor: pointer;
 }
-.minitext1 a:visited {
+.section-contents a:visited {
 	text-decoration: underline;
 	cursor: pointer;
 }
@@ -182,6 +182,13 @@ body::-webkit-scrollbar {
 .minitext2 {
     grid-column: 9;   /* 6번째 칸에 배치 */
 	text-align: right;
+}
+.minitext3 {
+    grid-column: 8;   /* 6번째 칸에 배치 */
+	grid-row: 1;
+	text-align: right;
+}
+cursor: pointer;
 }
 /* p 태그 스타일링 */
 .minitext p, .bodytext p {
@@ -222,6 +229,9 @@ body::-webkit-scrollbar {
 	}
 	.bodytext {
 	grid-column: 4 / span 7;  /* 8-10번째 칸에 걸쳐 배치 */
+	}
+	.nav {
+	top: 65%;
 	}
 }
 @media (max-width: 767px) {
@@ -307,6 +317,9 @@ body::-webkit-scrollbar {
 	.hashtags {
 		display: none;
 	}
+	.minitext3 {
+   display: none;
+}
 	.bodytext {
 	grid-column: 1 / span 3;  /* 8-10번째 칸에 걸쳐 배치 */
 	padding-right: 3%;
