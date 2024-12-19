@@ -269,7 +269,6 @@ body::-webkit-scrollbar {
 	padding-left: 10%;
 	}
 	.nav a {
-	font-family: 'Chalkboard SE', 'sans-serif';
 	font-size: 4rem;
 	line-height: 3.5rem;
 	 cursor: pointer;
@@ -286,7 +285,6 @@ body::-webkit-scrollbar {
 	.minitext {
 	display: flex;
 	flex-direction: column;
-	font-family: 'Chalkboard SE', 'sans-serif';
 	font-size: 1.5rem;
 	/*border: 1px solid blue;*/
 	height: 30%;
