@@ -52,22 +52,32 @@ body::-webkit-scrollbar {
 	text-decoration: underline;
 }
 .nav {
-	position: fixed;
-	display: flex;
-	flex-direction: row;
-	width: 93%;
-	height: auto;
-	top: 65%;
-	padding-left: 5%;
-	justify-content: space-between; /* 좌우로 자식 요소 배치 */
-	align-items: flex-end;   
+  position: fixed;
+  width: 100%;
+  z-index: 11;
 }
+
 .nav-left {
-	display: flex;
-	flex-direction: column;
+  position: fixed;  /* 화면에 고정 */
+  top: 65vh;  /* 화면의 65% 위치에서 시작 */
+  left: 0;  /* 화면 왼쪽 끝 */
+  display: flex;
+  flex-direction: column;  /* 세로로 정렬 */
+  align-items: flex-start;  /* 왼쪽 정렬 */
+  z-index: 11;  /* 다른 요소들보다 위에 표시되도록 */
+  padding-left: 5vw;  /* 왼쪽 여백 (원하는 만큼 조절) */
+  height: auto;  /* 높이는 자동으로 콘텐츠 크기에 맞게 조정 */
+  width: auto;   /* 너비는 자동으로 콘텐츠에 맞게 조정 */
 }
 .nav-right {
-	display: flex;
+	position: fixed; /* 화면에 고정 */
+  top: 86.2vh; /* 화면의 65% 위치에서 시작 */
+  right: 3vw; /* 화면 우측에서 5vw 만큼 떨어지게 설정 */
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 끝에 배치 */
+  z-index: 11; /* 다른 요소들보다 위에 표시되도록 */
+	height: auto;  /* 높이는 자동으로 콘텐츠 크기에 맞게 조정 */
+  width: auto;   /* 너비는 자동으로 콘텐츠에 맞게 조정 */
 }
 .menu-btn {
     background: none;           /* 배경 제거 */
@@ -209,6 +219,7 @@ body::-webkit-scrollbar {
 	width: 100%;
 	height: 100%;
 	justify-content: flex-start;
+	padding-top: .3vh;
 }
 .textlist a {
 	color: black;
@@ -223,6 +234,7 @@ body::-webkit-scrollbar {
 .category {
 	display: flex;
 	flex-direction: row;
+	margin-bottom: .5vh;
 }
 .textlist a:hover .category {
 	background-color: fuchsia;
@@ -256,6 +268,15 @@ body::-webkit-scrollbar {
 	.spring {
 		left: -15%;
 	}
+		.nav-left {
+  top: 73vh;  /* 화면의 65% 위치에서 시작 */
+  left: 0;  /* 화면 왼쪽 끝 */
+  padding-left: 9vw;  /* 왼쪽 여백 (원하는 만큼 조절) */
+}
+.nav-right {
+  top: 88.3vh; /* 화면의 65% 위치에서 시작 */
+  right: 5vw; /* 화면 우측에서 5vw 만큼 떨어지게 설정 */
+}
 	.minitext1 {
 		display: none;
 	}
@@ -305,14 +326,16 @@ body::-webkit-scrollbar {
 	/*padding-right: 2%;*/
 	padding-right: 4%;
 }
-	.nav {
-	width: 88%;
-	height: auto;
-	top: 74%;
-	padding-left: 10%;
-	}
+	.nav-left {
+  top: 76vh;  /* 화면의 65% 위치에서 시작 */
+  left: 0;  /* 화면 왼쪽 끝 */
+  padding-left: 9vw;  /* 왼쪽 여백 (원하는 만큼 조절) */
+}
+.nav-right {
+  top: 88.3vh; /* 화면의 65% 위치에서 시작 */
+  right: 5vw; /* 화면 우측에서 5vw 만큼 떨어지게 설정 */
+}
 	.nav a {
-	font-family: 'Chalkboard SE', 'sans-serif';
 	font-size: 4rem;
 	line-height: 3.5rem;
 	 cursor: pointer;
@@ -329,7 +352,6 @@ body::-webkit-scrollbar {
 	.minitext {
 	display: flex;
 	flex-direction: column;
-	font-family: 'Chalkboard SE', 'sans-serif';
 	font-size: 1.5rem;
 	/*border: 1px solid blue;*/
 	height: 30%;

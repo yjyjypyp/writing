@@ -53,22 +53,32 @@ body::-webkit-scrollbar {
 	text-decoration: underline;
 }
 .nav {
-	position: fixed;
-	display: flex;
-	flex-direction: row;
-	width: 98%;
-	height: auto;
-	top: 65%;
-	padding-left: 5%;
-	justify-content: space-between; /* 좌우로 자식 요소 배치 */
-	align-items: flex-end;   
+  position: fixed;
+  width: 100%;
+  z-index: 11;
 }
+
 .nav-left {
-	display: flex;
-	flex-direction: column;
+  position: fixed;  /* 화면에 고정 */
+  top: 65vh;  /* 화면의 65% 위치에서 시작 */
+  left: 0;  /* 화면 왼쪽 끝 */
+  display: flex;
+  flex-direction: column;  /* 세로로 정렬 */
+  align-items: flex-start;  /* 왼쪽 정렬 */
+  z-index: 11;  /* 다른 요소들보다 위에 표시되도록 */
+  padding-left: 5vw;  /* 왼쪽 여백 (원하는 만큼 조절) */
+  height: auto;  /* 높이는 자동으로 콘텐츠 크기에 맞게 조정 */
+  width: auto;   /* 너비는 자동으로 콘텐츠에 맞게 조정 */
 }
 .nav-right {
-	display: flex;
+	position: fixed; /* 화면에 고정 */
+  top: 86.2vh; /* 화면의 65% 위치에서 시작 */
+  right: 3vw; /* 화면 우측에서 5vw 만큼 떨어지게 설정 */
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 끝에 배치 */
+  z-index: 11; /* 다른 요소들보다 위에 표시되도록 */
+	height: auto;  /* 높이는 자동으로 콘텐츠 크기에 맞게 조정 */
+  width: auto;   /* 너비는 자동으로 콘텐츠에 맞게 조정 */
 }
 .menu-btn {
     background: none;           /* 배경 제거 */
@@ -153,7 +163,6 @@ body::-webkit-scrollbar {
 	flex-direction: column;
 	font-family: 'TranseptV01VF', sans-serif;
 	font-size: 1.5rem;
-	/*border: 1px solid blue;*/
 	height: 94%;
 }
 .minitext1 {
@@ -182,11 +191,13 @@ body::-webkit-scrollbar {
 .minitext2 {
     grid-column: 9;   /* 6번째 칸에 배치 */
 	text-align: right;
+	padding-top: .3vh;
 }
 .minitext3 {
     grid-column: 8;   /* 6번째 칸에 배치 */
 	grid-row: 1;
 	text-align: right;
+	padding-top: .3vh;
 }
 cursor: pointer;
 }
@@ -218,9 +229,6 @@ cursor: pointer;
 	.spring {
 		left: -15%;
 	}
-	.nav {
-		top: 75%;
-	}
 	.minitext1 {
 		display: none;
 	}
@@ -230,9 +238,15 @@ cursor: pointer;
 	.bodytext {
 	grid-column: 4 / span 7;  /* 8-10번째 칸에 걸쳐 배치 */
 	}
-	.nav {
-	top: 65%;
-	}
+	.nav-left {
+  top: 73vh;  /* 화면의 65% 위치에서 시작 */
+  left: 0;  /* 화면 왼쪽 끝 */
+  padding-left: 9vw;  /* 왼쪽 여백 (원하는 만큼 조절) */
+}
+.nav-right {
+  top: 88.3vh; /* 화면의 65% 위치에서 시작 */
+  right: 5vw; /* 화면 우측에서 5vw 만큼 떨어지게 설정 */
+}
 }
 @media (max-width: 767px) {
 	/*-mobile css-*/
@@ -273,12 +287,15 @@ cursor: pointer;
 	/*padding-right: 2%;*/
 	padding-right: 4%;
 }
-	.nav {
-	width: 98%;
-	height: auto;
-	top: 74%;
-	padding-left: 10%;
-	}
+	.nav-left {
+  top: 76vh;  /* 화면의 65% 위치에서 시작 */
+  left: 0;  /* 화면 왼쪽 끝 */
+  padding-left: 9vw;  /* 왼쪽 여백 (원하는 만큼 조절) */
+}
+.nav-right {
+  top: 88.3vh; /* 화면의 65% 위치에서 시작 */
+  right: 5vw; /* 화면 우측에서 5vw 만큼 떨어지게 설정 */
+}
 	.nav a {
 	font-size: 4rem;
 	line-height: 3.5rem;
