@@ -1,4 +1,5 @@
 .comments {
+	font-family: 'TranseptV01VF', sans-serif;
   max-width: 800px;
   margin: 0 auto;
   padding: 20px;
@@ -6,7 +7,8 @@
 
 h1 {
   text-align: left;
-  color: #333;
+	font-weight: 80;
+  color: black;
 	font-size: 2rem;
 }
 

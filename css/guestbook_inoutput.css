@@ -23,7 +23,10 @@ textarea {
   border-radius: 50px;
   resize: none;
 }
-
+textarea::placeholder {
+      color: #999;
+      font-style: italic;
+    }
 button {
   padding: 10px 20px;
   font-size: 1rem;
@@ -84,7 +87,7 @@ button:hover {
 	background-color: black;
 }
 @media (max-width: 767px) {
-.input-section {
+	.input-section {
   grid-row: 3;
 }
 	/* 포스트잇 컨테이너 스타일 */
@@ -96,7 +99,7 @@ button:hover {
   grid-column: 1/11;
   overflow-y: auto; /* 포스트잇들이 넘칠 경우 스크롤 가능 */
   max-height: 70vh; /* 전체 포스트잇 목록이 차지하는 최대 높이 */
-overflow-y: auto; /* 포스트잇들이 넘칠 경우 스크롤 가능 */
+	overflow-y: auto; /* 포스트잇들이 넘칠 경우 스크롤 가능 */
 }
 
 .post-it {
