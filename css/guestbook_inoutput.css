@@ -14,7 +14,6 @@ h1 {
 	height: 40px;
 	padding-right: 5vw;
 }
-
 textarea {
   flex: 1;
   padding: 10px;
@@ -22,6 +21,9 @@ textarea {
   border: 1px solid black;
   border-radius: 50px;
   resize: none;
+	overflow: hidden;  /* 스크롤 숨기기 */
+  word-wrap: break-word;  /* 긴 단어가 넘칠 경우 줄 바꿈 */
+  white-space: normal;    /* 텍스트 줄 바꿈 허용 */
 }
 textarea::placeholder {
       color: #999;
