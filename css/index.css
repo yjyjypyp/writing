@@ -21,9 +21,12 @@ body::-webkit-scrollbar {
 	justify-content: space-between;
 	width: 100vw;
 	height: 100vh;
-	background-color: white;
 	/*border: 1px solid red;*/
 	overflow: hidden;
+	background-image: url('../img/test01.png'); /* 배경 이미지 경로 */
+    background-size: cover;/* 이미지를 요소 크기에 맞게 조정 */
+    /*background-repeat: no-repeat; /* 이미지 반복 방지 */
+    /*background-position: center;  /* 이미지를 중앙에 위치 */
 }
 .name {
 	display: none;
@@ -107,7 +110,6 @@ body::-webkit-scrollbar {
             align-items: stretch;               /* 세로 방향으로 stretch */
             width: 5%;                          /* 바인딩 섹션 너비 */
             height: 100%;                       /* 화면 전체 높이 */
-            background-color: white;            /* 바인딩 섹션 배경 */
             position: relative;                 /* 기준 설정 */
         }
 
