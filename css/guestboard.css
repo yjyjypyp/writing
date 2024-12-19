@@ -246,6 +246,9 @@ body::-webkit-scrollbar {
 }
 @media (max-width: 767px) {
 	/*-mobile css-*/
+	.section-binding {
+            grid-template-rows: repeat(25, 1fr); /* 30개의 동일한 행 */
+        }
 	.hole {
             width: 18px;                /* 원 크기 */
             height: 18px;
