@@ -8,49 +8,51 @@
 <link href="../css/img.css" rel="stylesheet">
 <link href="../css/text.css" rel="stylesheet">
 <link href="../css/comments.css" rel="stylesheet">
+	<link href="../css/font_css/transeptV01VF.css" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Gowun+Batang:wght@400;700&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
 	<!-- Firebase SDK -->
 <!-- Firebase SDK -->
+  <!-- Firebase SDK -->
   <script type="module">
-    // Firebase SDK 모듈 임포트
     import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
     import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
 
     // Firebase 설정
     const firebaseConfig = {
       apiKey: "AIzaSyDv1ufBU17yblQt0_oog-6B-_oXb6g-iMI",
-    authDomain: "comment-2de47.firebaseapp.com",
-    databaseURL: "https://comment-2de47-default-rtdb.firebaseio.com",
-    projectId: "comment-2de47",
-    storageBucket: "comment-2de47.firebasestorage.app",
-    messagingSenderId: "792792808382",
-    appId: "1:792792808382:web:8605010a7f5839d58097ef"
+      authDomain: "comment-2de47.firebaseapp.com",
+      databaseURL: "https://comment-2de47-default-rtdb.firebaseio.com",
+      projectId: "comment-2de47",
+      storageBucket: "comment-2de47.firebasestorage.app",
+      messagingSenderId: "792792808382",
+      appId: "1:792792808382:web:8605010a7f5839d58097ef"
     };
 
     // Firebase 앱 초기화
     const app = initializeApp(firebaseConfig);
-    const database = getDatabase(app);  // Firebase Database 객체 초기화
+    const database = getDatabase(app);
 
     // 메시지 저장 로직
-    const messageInput = document.getElementById('messageInput');
-    const submitMessage = document.getElementById('submitMessage');
+    document.addEventListener('DOMContentLoaded', () => {
+      const messageInput = document.getElementById('messageInput');
+      const submitMessage = document.getElementById('submitMessage');
 
-    submitMessage.addEventListener('click', () => {
-      const message = messageInput.value.trim();
-      if (message) {
-        // Firebase Database에 메시지 추가
-        const messagesRef = ref(database, 'guestbook');
-        push(messagesRef, {
-          text: message,
-          timestamp: Date.now()
-        });
-        messageInput.value = '';
-        alert('메시지가 성공적으로 추가되었습니다!');
-      } else {
-        alert('메시지를 입력하세요.');
-      }
+      submitMessage.addEventListener('click', () => {
+        const message = messageInput.value.trim();
+        if (message) {
+          const messagesRef = ref(database, 'guestbook');
+          push(messagesRef, {
+            text: message,
+            timestamp: Date.now()
+          });
+          messageInput.value = '';
+          alert('Your message has been successfully added!');
+        } else {
+          alert('Please enter a message.');
+        }
+      });
     });
   </script>
 </head>
@@ -66,12 +68,12 @@
 		</div>
 		<div class="nav">
 			<div class="nav-left">
-			<a href="textlist.html" button class="menu-btn">Text</button></a>
-        	<a href="img.html" button class="menu-btn">(Img)</button></a>
-				<a href="../index.html" button class="menu-btn">Home</button></a>
+			<a href="textlist.html" class="menu-btn">Text</a>
+        	<a href="img.html" class="menu-btn">(Img)</a>
+				<a href="../index.html" class="menu-btn">Home</a>
 			</div>
 			<div class="nav-right">
-				<a href="info.html" button class="menu-btn">Info</button></a>
+				<a href="info.html" class="menu-btn">Info</a>
 			</div>
 		</div>
 		<div class="section-binding"></div>

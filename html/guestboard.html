@@ -7,94 +7,89 @@
 <title>Life it's Beautiful</title>
 <link href="../css/reset.css" rel="stylesheet">
 <link href="../css/guestboard.css" rel="stylesheet">
+	<link href="../css/font_css/transeptV01VF.css" rel="stylesheet">
 	<link href="../css/guestbook_inoutput.css" rel="stylesheet">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courgette&family=Gowun+Batang:wght@400;700&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
 	<!-- Firebase SDK -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
-  import { getDatabase, ref, onChildAdded, remove, set } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+<!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getDatabase, ref, onChildAdded, remove, set } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
 
-  const firebaseConfig = {
-    apiKey: "AIzaSyDv1ufBU17yblQt0_oog-6B-_oXb6g-iMI",
-    authDomain: "comment-2de47.firebaseapp.com",
-    databaseURL: "https://comment-2de47-default-rtdb.firebaseio.com",
-    projectId: "comment-2de47",
-    storageBucket: "comment-2de47.firebasestorage.app",
-    messagingSenderId: "792792808382",
-    appId: "1:792792808382:web:8605010a7f5839d58097ef"
-  };
+    const firebaseConfig = {
+      apiKey: "AIzaSyDv1ufBU17yblQt0_oog-6B-_oXb6g-iMI",
+      authDomain: "comment-2de47.firebaseapp.com",
+      databaseURL: "https://comment-2de47-default-rtdb.firebaseio.com",
+      projectId: "comment-2de47",
+      storageBucket: "comment-2de47.firebasestorage.app",
+      messagingSenderId: "792792808382",
+      appId: "1:792792808382:web:8605010a7f5839d58097ef"
+    };
 
-  // Firebase 초기화
-  const app = initializeApp(firebaseConfig);
-  const database = getDatabase(app);  // Firebase Database 초기화
+    // Firebase 초기화
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
 
-  // Firebase에서 방명록 메시지 불러오기
-  const postItBoard = document.getElementById('postItBoard');
-  const messagesRef = ref(database, 'guestbook');  // 'guestbook' 경로 참조
+    const postItBoard = document.getElementById('postItBoard');
+    const messagesRef = ref(database, 'guestbook');
 
-  // 실시간 데이터 추가 (새로운 메시지가 추가되면 화면에 표시)
-  onChildAdded(messagesRef, (snapshot) => {
-    const messageData = snapshot.val();
-    const messageId = snapshot.key; // 메시지의 고유 키
+    // 최신 메시지가 위에 표시되도록 역순으로 추가
+    onChildAdded(messagesRef, (snapshot) => {
+      const messageData = snapshot.val();
+      const messageId = snapshot.key;
 
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('post-it'); // 스타일링을 위한 클래스 추가
-    messageElement.textContent = messageData.text;
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('post-it');
+      messageElement.textContent = messageData.text;
 
-    // 삭제 버튼 생성
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = '';
-    deleteButton.classList.add('delete-button');
-    messageElement.appendChild(deleteButton);
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = '삭제';
+      deleteButton.classList.add('delete-button');
+      messageElement.appendChild(deleteButton);
 
-    postItBoard.appendChild(messageElement); // 방명록에 메시지 추가
+      postItBoard.prepend(messageElement); // 최신 메시지를 위에 추가
 
-    // 삭제 버튼 클릭 시 처리
-    deleteButton.addEventListener('click', () => {
-      const password = prompt("게시물 삭제 권한은 관리자에게 있습니다. 비밀번호를 입력하세요").trim(); // 비밀번호 입력 받기
+      deleteButton.addEventListener('click', () => {
+        const password = prompt("게시물 삭제 권한은 관리자에게 있습니다. 비밀번호를 입력하세요").trim();
+        if (password === 'delete') {
+          remove(ref(database, 'guestbook/' + messageId))
+            .then(() => {
+              alert('메시지가 삭제되었습니다!');
+              messageElement.remove();
+            })
+            .catch((error) => {
+              console.error('삭제 실패:', error);
+              alert('삭제에 실패했습니다. 다시 시도해 주세요.');
+            });
+        } else {
+          alert('비밀번호가 틀렸습니다.');
+        }
+      });
+    });
 
-      // 비밀번호 확인 (예시로 'delete' 사용)
-      if (password === 'delete') {
-        // 비밀번호가 맞으면 해당 메시지 삭제
-        remove(ref(database, 'guestbook/' + messageId))
-          .then(() => {
-            alert('메시지가 삭제되었습니다!');
-            messageElement.remove(); // 화면에서 메시지 삭제
-          })
-          .catch((error) => {
-            console.error('삭제 실패:', error);
-            alert('삭제에 실패했습니다. 다시 시도해 주세요.');
-          });
+    // 메시지 추가
+    document.getElementById('submitMessage').addEventListener('click', () => {
+      const messageInput = document.getElementById('messageInput');
+      const messageText = messageInput.value.trim();
+
+      if (messageText !== '') {
+        const newMessageRef = ref(database, 'guestbook/' + Date.now());
+        set(newMessageRef, {
+          text: messageText
+        }).then(() => {
+          messageInput.value = '';
+          alert('메시지가 추가되었습니다!');
+        }).catch((error) => {
+          console.error('메시지 추가 실패:', error);
+          alert('메시지 추가에 실패했습니다. 다시 시도해 주세요.');
+        });
       } else {
-        alert('비밀번호가 틀렸습니다.');
+        alert('메시지를 입력해주세요!');
       }
     });
-  });
-
-  // 메시지 추가 기능
-  document.getElementById('submitMessage').addEventListener('click', () => {
-    const messageInput = document.getElementById('messageInput');
-    const messageText = messageInput.value.trim(); // 입력된 메시지 가져오기
-
-    if (messageText !== '') {
-      // Firebase에 메시지 저장
-      const newMessageRef = ref(database, 'guestbook/' + Date.now()); // 고유 키를 시간으로 설정
-      set(newMessageRef, {
-        text: messageText
-      }).then(() => {
-        messageInput.value = ''; // 입력란 초기화
-        alert('메시지가 추가되었습니다!');
-      }).catch((error) => {
-        console.error('메시지 추가 실패:', error);
-        alert('메시지 추가에 실패했습니다. 다시 시도해 주세요.');
-      });
-    } else {
-      alert('메시지를 입력해주세요!');
-    }
-  });
-</script>
+  </script>
 
 
 </head>
@@ -110,12 +105,12 @@
 		</div>
 		<div class="nav">
 			<div class="nav-left">
-			<a href="../html/textlist.html" button class="menu-btn"><p1>Text</p1></button></a>
-        	<a href="../html/img.html" button class="menu-btn"><p1>(Img)</p1></button></a>
-				<a href="../index.html" button class="menu-btn"><p1>Home</p1></button></a>
+			<a href="../html/textlist.html" class="menu-btn"><p1>Text</p1></a>
+        	<a href="../html/img.html" class="menu-btn"><p1>(Img)</p1></a>
+				<a href="../index.html" class="menu-btn"><p1>Home</p1></a>
 			</div>
 			<div class="nav-right">
-				<a href="../html/info.html" button class="menu-btn"><p1>Info</p1></button></a>
+				<a href="../html/info.html" class="menu-btn"><p1>Info</p1></a>
 			</div>
 		</div>
 		<div class="section-binding"></div>
