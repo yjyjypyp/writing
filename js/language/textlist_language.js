@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
     const translations = {
         en: {
             ep001: 'Thoughts about places',
-			ep000: 'Your notes',
+			ep000: 'Our notes',
             instagram: '@yejin.wip',
             website: '▫ yejinschoi.com ↗',
         },
         ko: {
             ep001: '공간에 대한 생각',
-			ep000: '당신의 기록',
+			ep000: '우리들의 기록',
             instagram: '@yejin.wip',
             website: '▫ yejinschoi.com &#x2197;',
         }
