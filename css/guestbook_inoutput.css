@@ -13,6 +13,7 @@ h1 {
 	width: 100%;
 	height: 40px;
 	padding-right: 5vw;
+	padding-top: 0;
 }
 textarea {
   flex: 1;
@@ -94,6 +95,7 @@ button:hover {
 @media (max-width: 767px) {
 	.input-section {
   grid-row: 3;
+		margin-top: 2vh;
 }
 	/* 포스트잇 컨테이너 스타일 */
 .post-it-board {
