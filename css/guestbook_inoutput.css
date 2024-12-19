@@ -81,6 +81,8 @@ button:hover {
     border-radius: 5px;
     cursor: pointer;
     padding: 6px;
+	width: 6px;  /* 버튼의 너비를 설정 */
+    height: 6px;  /* 버튼의 높이를 설정 */
 }
 
 .delete-button:hover {
