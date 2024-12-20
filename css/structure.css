@@ -141,6 +141,20 @@ body::-webkit-scrollbar {
             left: -10%;                /* 원을 살짝 덮도록 조정 */
             z-index: 2;                 /* 스프링을 아래로 */
         }
+/* 기본 폰트 설정 (전체 .bodytext에 대해) */
+.bodytext {
+    font-family: 'Helvetica Neue', sans-serif; /* 기본은 Noto Sans */
+}
+
+/* 영어일 경우 .bodytext에 대한 설정 */
+html[lang="en"] .bodytext {
+    font-family: 'Helvetica Neue', sans-serif; /* 영어일 경우 Helvetica */
+}
+
+/* 한국어일 경우 .bodytext에 대한 설정 */
+html[lang="ko"] .bodytext {
+    font-family: 'Noto Sans', sans-serif; /* 한국어일 경우 Noto Sans */
+}
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	/*--tablet css--*/
 	.langexchange {
@@ -227,15 +241,27 @@ body::-webkit-scrollbar {
 
   .nav-left {
     left: 7vw;
-    bottom: 5vh; /* 모바일에서도 하단에서 5vh 위치 유지 */
+    bottom: 2vh; /* 모바일에서도 하단에서 5vh 위치 유지 */
   }
 
   .nav-right {
     right: 1vw;
-    bottom: 5vh; /* 모바일에서도 하단에서 5vh 위치 유지 */
+    bottom: 2vh; /* 모바일에서도 하단에서 5vh 위치 유지 */
   }
 	.nav a {
 	font-size: 5rem;
 	line-height: 4.5rem;
+}
+	html[lang="en"] .bodytext {
+    font-family: 'Helvetica Neue', sans-serif; /* 영어일 경우 Helvetica */
+	font-size: 1.5rem;
+	line-height: 2rem;
+}
+
+/* 한국어일 경우 .bodytext에 대한 설정 */
+html[lang="ko"] .bodytext {
+    font-family: 'Noto Sans', sans-serif; /* 한국어일 경우 Noto Sans */
+	font-size: 1.5rem;
+	line-height: 2.2rem;
 }
 }
