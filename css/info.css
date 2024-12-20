@@ -82,17 +82,27 @@
 }
 /* .bodytext 클래스에 대한 스타일 설정 */
 .bodytext p2 {
-	display: none;
+	display: flex;
+		padding-top: 5vh;
 	font-family: 'TranseptV01VF', sans-serif;
+	line-height: 1rem;
 }
 .bodytext p0 {
 		display: inline-block;
 	font-family: 'Helvetica Neue', sans-serif;
 		font-size: 1rem;
 		line-height: 1.2rem;
-		padding-top: 2vh;
+		padding-top: 0vh;
 		padding-bottom: 45vh;
 	}
+.bodytext a {
+	font-size: 1.3rem;
+		color: black;
+		text-decoration: none;
+}
+.bodytext a:hover {
+	text-decoration: underline;
+}
 @media (min-width: 768px) and (max-width: 1024px) {
 	/*--tablet css--*/
 }
