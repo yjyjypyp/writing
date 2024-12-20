@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Life it's Beautiful</title>
+<link href="../css/reset.css" rel="stylesheet">
+<link href="../css/guestboard.css" rel="stylesheet">
+	<link href="../css/structure.css" rel="stylesheet">
+	<link href="../css/font_css/transeptV01VF.css" rel="stylesheet">
+	<link href="../css/guestbook_inoutput.css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courgette&family=Gowun+Batang:wght@400;700&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR:wght@200..900&display=swap" rel="stylesheet">
+	<!-- Firebase SDK -->
+<!-- Firebase SDK -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+    import { getDatabase, ref, onChildAdded, remove, set } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDv1ufBU17yblQt0_oog-6B-_oXb6g-iMI",
+      authDomain: "comment-2de47.firebaseapp.com",
+      databaseURL: "https://comment-2de47-default-rtdb.firebaseio.com",
+      projectId: "comment-2de47",
+      storageBucket: "comment-2de47.firebasestorage.app",
+      messagingSenderId: "792792808382",
+      appId: "1:792792808382:web:8605010a7f5839d58097ef"
+    };
+
+    // Firebase 초기화
+    const app = initializeApp(firebaseConfig);
+    const database = getDatabase(app);
+
+    const postItBoard = document.getElementById('postItBoard');
+    const messagesRef = ref(database, 'guestbook');
+
+    // 최신 메시지가 위에 표시되도록 역순으로 추가
+    onChildAdded(messagesRef, (snapshot) => {
+      const messageData = snapshot.val();
+      const messageId = snapshot.key;
+
+      const messageElement = document.createElement('div');
+      messageElement.classList.add('post-it');
+      messageElement.textContent = messageData.text;
+
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = '';
+      deleteButton.classList.add('delete-button');
+      messageElement.appendChild(deleteButton);
+
+      postItBoard.prepend(messageElement); // 최신 메시지를 위에 추가
+
+      deleteButton.addEventListener('click', () => {
+        const password = prompt("게시물 삭제 권한은 관리자에게 있습니다. 비밀번호를 입력하세요").trim();
+        if (password === 'delete') {
+          remove(ref(database, 'guestbook/' + messageId))
+            .then(() => {
+              alert('메시지가 삭제되었습니다!');
+              messageElement.remove();
+            })
+            .catch((error) => {
+              console.error('삭제 실패:', error);
+              alert('삭제에 실패했습니다. 다시 시도해 주세요.');
+            });
+        } else {
+          alert('비밀번호가 틀렸습니다.');
+        }
+      });
+    });
+
+    // 메시지 추가
+    document.getElementById('submitMessage').addEventListener('click', () => {
+      const messageInput = document.getElementById('messageInput');
+      const messageText = messageInput.value.trim();
+
+      if (messageText !== '') {
+        const newMessageRef = ref(database, 'guestbook/' + Date.now());
+        set(newMessageRef, {
+          text: messageText
+        }).then(() => {
+          messageInput.value = '';
+          alert('메시지가 추가되었습니다!');
+        }).catch((error) => {
+          console.error('메시지 추가 실패:', error);
+          alert('메시지 추가에 실패했습니다. 다시 시도해 주세요.');
+        });
+      } else {
+        alert('메시지를 입력해주세요!');
+      }
+    });
+  </script>
+
+
+</head>
+<body>
+    <div class="container">
+		<div class="langexchange">
+			<div class="name"><p>(&nbsp&nbsp&nbsp)or Not</p></div>
+		<div class="language">
+                <a href="#" id="ko" class="language-button">KO</a>
+                <span>/</span>
+                <a href="#" id="en" class="language-button">EN</a>
+        </div>
+		</div>
+			<div class="nav nav-left">
+			<a href="../html/textlist.html" class="menu-btn"><p1>Text</p1></a>
+        	<a href="../html/img.html" class="menu-btn"><p1>(Img)</p1></a>
+				<a href="../index.html" class="menu-btn"><p1>Home</p1></a>
+			</div>
+			<div class="nav nav-right">
+				<a href="../html/info.html" class="menu-btn"><p1>Info</p1></a>
+			</div>
+		<div class="section-binding"></div>
+		<div class="section-contents">
+			<div class="minitext minitext1"><p><a href="https://www.instagram.com/yejin.wip?igsh=b2xyaHJpeG9zMTlm" target="_blank">@yejin.wip</a></p></div>
+			<div class="minitext minitext2"><p1>Guestboard</p></div>
+    
+    			<!-- 입력 섹션 -->
+    			<div class="input-section">
+     			 <textarea id="messageInput" placeholder="메시지를 입력하세요"></textarea>
+     			 <button id="submitMessage">추가</button>
+   				 </div>
+    			<!-- 방명록 표시 -->
+    			<div id="postItBoard" class="post-it-board">
+      			<!-- 메시지가 여기에 추가됩니다 -->
+   				 </div>
+
+				</div>
+</body>
+
+		<script src="../js/binding.js"></script>
+		<script src="../js/language/guestboard_language.js"></script>
+
+</html>
