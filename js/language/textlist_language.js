@@ -36,6 +36,9 @@ document.addEventListener('DOMContentLoaded', function () {
 		document.getElementById('ep000').innerHTML = translation.ep000;
         document.querySelector('p2 a[href="https://www.instagram.com/yejin.wip?igsh=b2xyaHJpeG9zMTlm"]').innerHTML = translation.instagram;
         document.querySelector('p2 a[href="https://yejinschoi.com/"]').innerHTML = translation.website;
+		
+		// 언어에 맞게 lang 속성 업데이트
+        document.documentElement.lang = language;
 
         // 버튼에 active 클래스를 적용해 밑줄 표시
         if (language === 'ko') {
