@@ -46,13 +46,14 @@ button:hover {
 /* 포스트잇 컨테이너 스타일 */
 .post-it-board {
   display: flex;
-  flex-wrap:wrap;
-	flex-flow: wrap-reverse;
+	flex-flow: row wrap;
+	padding-left: 4vw;
+		padding-right: 3vw;
   gap: 1.5rem;
   grid-row: 3/16;
   grid-column: 1/11;
   overflow-y: auto; /* 포스트잇들이 넘칠 경우 스크롤 가능 */
-  max-height: 70vh; /* 전체 포스트잇 목록이 차지하는 최대 높이 */
+  max-height: 80vh; /* 전체 포스트잇 목록이 차지하는 최대 높이 */
 	overflow-y: auto; /* 포스트잇들이 넘칠 경우 스크롤 가능 */
 	font-family: 'TranseptV01VF', 'Helvetica Neue', 'Noto Sans KR','ヒラギノ角ゴシック', sans-serif;
 }
@@ -95,10 +96,9 @@ button:hover {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 	/*--tablet css--*/
 	.post-it-board {
-		flex-wrap:wrap;
-	flex-flow: wrap;
-		justify-content: space-between;
-		padding-left: 3vw;
+		flex-flow: row wrap;
+		justify-content: flex-end;
+		padding-left: 0vw;
 		padding-right: 3vw;
 	}
 }
@@ -115,8 +115,10 @@ button:hover {
   grid-row: 4/15;
   grid-column: 1/11;
   overflow-y: auto; /* 포스트잇들이 넘칠 경우 스크롤 가능 */
-  max-height: 70vh; /* 전체 포스트잇 목록이 차지하는 최대 높이 */
+  max-height: 75vh; /* 전체 포스트잇 목록이 차지하는 최대 높이 */
 	overflow-y: auto; /* 포스트잇들이 넘칠 경우 스크롤 가능 */
+	    padding-left: 0vw;
+    padding-right: 4vw;
 }
 
 .post-it {
@@ -126,7 +128,7 @@ button:hover {
   border: 1px solid black;
   border-radius: 8px;
   width: 100%;  /* 가로 폭은 100%로 설정 */
-  max-width: 94%; /* 최대 너비를 설정 */
+  max-width: 100%; /* 최대 너비를 설정 */
   height: auto; /* 텍스트 길이에 맞춰 높이가 자동으로 늘어나도록 설정 */
   min-height: 10vh; /* 최소 높이는 10vh로 설정 */
   padding: 1rem; /* 내부 여백 설정 */
