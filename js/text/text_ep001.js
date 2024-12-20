@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 텍스트 및 링크 번역
     const translations = {
         en: {
-            description: 'Thoughts about places<br><br>The translation will be updated soon. Sorry for your inconvenience',
+            description: 'Reflections on Space<br><br>The translation will be updated soon. Sorry for your inconvenience',
 			commentinfo: 'You can check the comments from here',
 			messageInput: 'Write your comments',
 			submitMessage: 'Add',
