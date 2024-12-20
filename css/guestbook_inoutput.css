@@ -92,6 +92,16 @@ button:hover {
 .delete-button:hover {
 	background-color: black;
 }
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+	/*--tablet css--*/
+	.post-it-board {
+		flex-wrap:wrap;
+	flex-flow: wrap;
+		justify-content: space-between;
+		padding-left: 3vw;
+		padding-right: 3vw;
+	}
+}
 @media (max-width: 767px) {
 	.input-section {
   grid-row: 3;
