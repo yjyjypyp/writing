@@ -24,8 +24,16 @@ document.addEventListener('DOMContentLoaded', function () {
     enButton.addEventListener('click', function () {
         updateLanguage('en');
     });
+	// 언어를 업데이트하는 함수
+    function updateLanguage(language) {
+        // 번역된 텍스트 적용
+        const translation = translations[language];
+        document.getElementById('description').innerHTML = translation.description;
+        document.querySelector('p2 a[href="https://www.instagram.com/yejin.wip?igsh=b2xyaHJpeG9zMTlm"]').innerHTML = translation.instagram;
+        document.querySelector('p2 a[href="https://yejinschoi.com/"]').innerHTML = translation.website;
 
-    // 언어에 맞게 lang 속성 업데이트
+
+   // 언어에 맞게 lang 속성 업데이트
         document.documentElement.lang = language;
 
         // 버튼에 active 클래스를 적용해 밑줄 표시
