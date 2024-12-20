@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 텍스트 및 링크 번역
     const translations = {
         en: {
-            ep001: 'Thoughts about places',
+            ep001: 'Reflections on Space',
 			ep000: 'Our notes',
             instagram: '@yejin.wip',
             website: '▫ yejinschoi.com ↗',
