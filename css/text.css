@@ -1,0 +1,167 @@
+@charset "UTF-8";
+/* CSS Document */
+.container {
+	display: flex;
+	flex-direction: row;
+	flex-direction: row;
+	justify-content: space-between;
+	width: 100vw;
+	height: 100vh;
+	background-color: white;
+	/*border: 1px solid red;*/
+	overflow: hidden;
+}
+.section-contents {
+	 display: grid;
+    grid-template-columns: repeat(10, 1fr);  /* 10개의 가로 칸 생성 */
+    gap: 2vw;  /* 각 칸 사이의 간격 */
+    width: 100%;  /* 그리드 컨테이너 너비를 100%로 설정 */
+    height: 93%; /* 화면을 꽉 채운 높이 설정 */
+    /*border: 1px solid #000;   그리드 전체 테두리 */
+	padding-top: 2%;
+	padding-bottom: 5%;
+	overflow-y: auto;
+}
+.section-contents::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+/* 그리드의 각 라인 보이도록 설정 */
+/*
+.section-contents > div {*/
+   /* border: 1px solid #ccc;  /* 그리드의 각 칸에 테두리 추가 */
+/*}*/
+.minitext {
+	display: flex;
+	flex-direction: column;
+	font-family: 'TranseptV01VF', sans-serif;
+	font-size: 1.5rem;
+	/*border: 1px solid blue;*/
+	height: 94%;
+}
+.minitext1 {
+	display: flex;
+	grid-column: 4 ;
+	text-align: left;
+}
+.minitext1 a {
+	color: black;
+	text-decoration: none;
+	cursor: pointer;
+}
+.minitext1 a:hover {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.minitext1 a:active {
+	text-decoration: underline;
+	cursor: pointer;
+}
+.minitext1 a:visited {
+	text-decoration: underline;
+	cursor: pointer;
+}
+/* minitext는 6번째 칸에 배치 */
+.minitext2 {
+    grid-column: 5;   /* 6번째 칸에 배치 */
+	text-align: right;
+	padding-top: .3vh;
+}
+/* p 태그 스타일링 */
+.minitext p, .bodytext p {
+    margin: 0;                             /* 여백 제거 */
+    padding: 0;                            /* 패딩 제거 */
+}
+.minitext p {
+	line-height: 2rem;
+}
+/* bodytext는 8, 9, 10번째 칸에 배치 */
+.bodytext {
+	grid-column: 6 / span 5;  /* 8-10번째 칸에 걸쳐 배치 */
+	padding-right: 3%;
+	font-family: 'Noto Sans KR', 'sans-serif';
+	font-size: 2rem;
+	height: 100%;
+	overflow-y:scroll;
+	overflow-wrap: break-word; /* 긴 단어 줄바꿈 */
+    word-break: break-word;    /* 긴 단어 줄바꿈 */
+	margin-bottom: 20%;       /* 하단 여백 */
+}
+#description {
+    white-space: normal;       /* 텍스트가 줄 바꿈되도록 설정 */
+}
+#description a {
+	font-family: 'Helvetica Neue','Noto Sans KR', 'sans-serif';
+    color: black;
+	text-decoration: underline;
+}
+#description a:hover {
+	color: fuchsia;
+	text-decoration: underline;
+}
+.bodytext p2 {
+	display: none;
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+	/*--tablet css--*/
+}
+@media (max-width: 767px) {
+	/*-mobile css-*/
+	.section-contents {
+	 display: grid;
+    grid-template-columns: repeat(1, 1fr);  /* 10개의 가로 칸 생성 */
+    width: 88%;  /* 그리드 컨테이너 너비를 100%로 설정 */
+    height: 100%; /* 화면을 꽉 채운 높이 설정 */
+    /*border: 1px solid #000;   그리드 전체 테두리 */
+	padding-top: 2%;
+}
+	.minitext {
+	display: flex;
+	flex-direction: column;
+	font-size: 1.5rem;
+	/*border: 1px solid blue;*/
+	height: 30%;
+}
+.minitext1 {
+	display: none;
+	grid-row: 2;
+	grid-column: 2 ;
+	text-align: right;
+}
+	/* minitext는 6번째 칸에 배치 */
+.minitext2 {
+	display: none;
+    grid-column: 2;   /* 6번째 칸에 배치 */
+	text-align: right;
+}
+	.hashtags {
+		display: none;
+	}
+	.bodytext {
+	grid-column: 1 / span 3;  /* 8-10번째 칸에 걸쳐 배치 */
+	padding-right: 3%;
+	font-family: 'Noto Sans KR', 'sans-serif';
+	font-size: 1.5rem;
+		line-height: 2.2rem;
+	height: 100%;
+	overflow-y:scroll;
+		padding-top: 12vh;
+}
+	.bodytext p2 {
+		display: flex;
+	}
+	.bodytext a {
+		font-family: 'TranseptV01VF';
+	font-size: 1.5rem;
+		color: black;
+		text-decoration: none;
+	}
+	.bodytext a:hover {
+		text-decoration: underline;
+	}
+	.bodytext a:active {
+		text-decoration: underline;
+	}
+	.bodytext a:visited {
+		text-decoration: none;
+	}
+}

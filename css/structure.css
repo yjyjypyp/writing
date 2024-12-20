@@ -1,0 +1,220 @@
+@charset "UTF-8";
+/* CSS Document */
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 15px;
+	font-family: 'TranseptV01VF', 'Helvetica Neue', 'Noto Sans KR', sans-serif;
+}
+body {
+	background-color: white;
+	overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+}
+.langexchange {
+	display: flex;
+	flex-direction : row;
+	justify-content:flex-start; /* 자식 요소를 좌우 끝에 배치 */
+    align-items: stretch;     /* 자식 요소의 높이를 부모의 높이에 맞춤 */
+	position: fixed;
+	width: 100%;
+	top:0;
+}
+.language {
+	padding-top: 1%;
+	/*padding-right: 2%;*/
+	padding-left: 6%;
+}
+.language a {
+	font-family: 'TranseptV01VF', sans-serif;
+	font-size: 2rem;
+	text-decoration: none;
+	color: black;
+}
+.language a:hover {
+	text-decoration: underline;
+}
+.nav {
+  position: fixed;
+  width: 100%;
+  z-index: 11;
+}
+
+.nav-left {
+  position: fixed;  /* 화면에 고정 */
+  top: 65vh;  /* 화면의 65% 위치에서 시작 */
+  left: 0;  /* 화면 왼쪽 끝 */
+  display: flex;
+  flex-direction: column;  /* 세로로 정렬 */
+  align-items: flex-start;  /* 왼쪽 정렬 */
+  z-index: 11;  /* 다른 요소들보다 위에 표시되도록 */
+  padding-left: 5vw;  /* 왼쪽 여백 (원하는 만큼 조절) */
+  height: auto;  /* 높이는 자동으로 콘텐츠 크기에 맞게 조정 */
+  width: auto;   /* 너비는 자동으로 콘텐츠에 맞게 조정 */
+}
+.nav-right {
+	position: fixed; /* 화면에 고정 */
+  top: 86.2vh; /* 화면의 65% 위치에서 시작 */
+  right: 3vw; /* 화면 우측에서 5vw 만큼 떨어지게 설정 */
+  display: flex;
+  justify-content: flex-end; /* 오른쪽 끝에 배치 */
+  z-index: 11; /* 다른 요소들보다 위에 표시되도록 */
+	height: auto;  /* 높이는 자동으로 콘텐츠 크기에 맞게 조정 */
+  width: auto;   /* 너비는 자동으로 콘텐츠에 맞게 조정 */
+}
+.menu-btn {
+    background: none;           /* 배경 제거 */
+    border: none;               /* 테두리 제거 */           /* 패딩 제거 */           /* 마우스를 올렸을 때 커서 변경 */
+    text-decoration: none;  
+	text-align: left;   /* 기본 밑줄 제거 */
+}
+.menu-btn:focus {
+    outline: none;              /* 포커스 상태의 테두리 제거 */
+}
+.nav a {
+	font-size: 8rem;
+	line-height: 7rem;
+	 cursor: pointer;
+	color: black;
+}
+.nav a:hover {
+	background-color: blue;
+	color: fuchsia;
+	font-style: italic;
+	 cursor: pointer;
+}
+.name {
+	display: none;
+}
+.section-binding {
+            display: grid;
+            grid-template-rows: repeat(30, 1fr); /* 30개의 동일한 행 */
+            justify-items: center;              /* 가로 방향 중앙 정렬 */
+            align-items: stretch;               /* 세로 방향으로 stretch */
+            width: 5%;                          /* 바인딩 섹션 너비 */
+            height: 100%;                       /* 화면 전체 높이 */
+            position: relative;                 /* 기준 설정 */
+        }
+
+        .binding-item {
+            position: relative;
+            display: flex;
+            align-items: center; /* 세로 방향 정렬 */
+            width: 100%;
+        }
+
+        .hole {
+            width: 18px;                /* 원 크기 */
+            height: 18px;
+            background-color: black;    /* 원 배경색 */
+            border: 1px solid black;    /* 원 테두리 */
+            border-radius: 50%;         /* 원형 */
+            position: relative;
+            z-index: 1;      
+			left: 30%;/* 원을 위로 */
+        }
+
+        .spring {
+            width: 40px;                /* 스프링 크기 */
+            height: 12px;
+            background-color: ghostwhite;
+			border: 1px solid black;
+			border-radius: 35%; /* 스프링 색상 */
+            transform: rotate(15deg);   /* 60도 기울이기 */
+            position: absolute;
+            left: -10%;                /* 원을 살짝 덮도록 조정 */
+            z-index: 2;                 /* 스프링을 아래로 */
+        }
+@media (min-width: 768px) and (max-width: 1024px) {
+	/*--tablet css--*/
+	.langexchange {
+		padding-top: .6vh;
+	}
+	.hole {
+			left: 50%;/* 원을 위로 */
+        }
+	.spring {
+		left: -15%;
+	}
+	.minitext1 {
+		display: none;
+	}
+	.minitext2 {
+    grid-column: 3;   /* 6번째 칸에 배치 */
+	}
+	.bodytext {
+	grid-column: 4 / span 7;  /* 8-10번째 칸에 걸쳐 배치 */
+	}
+	.nav-left {
+  top: 73vh;  /* 화면의 65% 위치에서 시작 */
+  left: 0;  /* 화면 왼쪽 끝 */
+  padding-left: 9vw;  /* 왼쪽 여백 (원하는 만큼 조절) */
+}
+.nav-right {
+  top: 88.7vh; /* 화면의 65% 위치에서 시작 */
+  right: 5vw; /* 화면 우측에서 5vw 만큼 떨어지게 설정 */
+	}
+}
+@media (max-width: 767px) {
+	/*-mobile css-*/
+	.section-binding {
+            grid-template-rows: repeat(25, 1fr); /* 30개의 동일한 행 */
+        }
+	.hole {
+            width: 18px;                /* 원 크기 */
+            height: 18px;
+            background-color: black;    /* 원 배경색 */
+            border: 1px solid black;    /* 원 테두리 */
+            border-radius: 50%;         /* 원형 */
+            position: relative;
+            z-index: 1;      
+			left: 50%;/* 원을 위로 */
+        }
+
+        .spring {
+            width: 40px;                /* 스프링 크기 */
+            height: 12px;
+            background-color: ghostwhite;
+			border: 1px solid black;
+			border-radius: 35%; /* 스프링 색상 */
+            transform: rotate(15deg);   /* 60도 기울이기 */
+            position: absolute;
+            left: -100%;                /* 원을 살짝 덮도록 조정 */
+            z-index: 2;                 /* 스프링을 아래로 */
+        }
+	.name {display: none;}
+	.langexchange {
+	display: flex;
+	flex-direction : row;
+	justify-content: flex-end; /* 자식 요소를 좌우 끝에 배치 */
+    align-items: stretch;     /* 자식 요소의 높이를 부모의 높이에 맞춤 */
+	position: fixed;
+	width: 100%;
+	top:0;
+		margin-top: 1.5vh;
+	/*border: 1px solid green;*/
+}
+.language {
+	/*padding-right: 2%;*/
+	padding-right: 4%;
+}
+	.nav-left {
+  top: 76vh;  /* 화면의 65% 위치에서 시작 */
+  left: 0;  /* 화면 왼쪽 끝 */
+  padding-left: 9vw;  /* 왼쪽 여백 (원하는 만큼 조절) */
+}
+.nav-right {
+  top: 88.7vh; /* 화면의 65% 위치에서 시작 */
+  right: 5vw; /* 화면 우측에서 5vw 만큼 떨어지게 설정 */
+}
+	.nav a {
+	font-size: 4rem;
+	line-height: 3.5rem;
+	 cursor: pointer;
+	color: black;
+}
+}
