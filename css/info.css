@@ -79,7 +79,6 @@
 	font-size: 2rem;
 	height: 100%;
 	overflow-y:scroll;
-	border: 1px solid blue;
 }
 .bodytext p2 {
 	display: none;
