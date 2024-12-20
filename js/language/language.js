@@ -40,15 +40,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 버튼에 active 클래스를 적용해 밑줄 표시
         if (language === 'ko') {
-            koButton.classList.add('active');
-            enButton.classList.remove('active');
+            koButton.className = koButton.className.replace('active', '') + ' active';
+            enButton.className = enButton.className.replace('active', '');
         } else if (language === 'en') {
-            enButton.classList.add('active');
-            koButton.classList.remove('active');
+            enButton.className = enButton.className.replace('active', '') + ' active';
+            koButton.className = koButton.className.replace('active', '');
         }
 
-        // 언어 설정을 로컬 스토리지에 저장
-        localStorage.setItem('language', language);
+        // 언어 설정을 로컬 스토리지에 저장 (예외 처리 추가)
+        try {
+            localStorage.setItem('language', language);
+        } catch (error) {
+            console.error("LocalStorage not available:", error);
+        }
     }
 
     // 페이지가 로드될 때, 로컬 스토리지에서 언어 값 가져오기

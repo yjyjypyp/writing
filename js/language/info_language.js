@@ -25,28 +25,24 @@ document.addEventListener('DOMContentLoaded', function () {
         updateLanguage('en');
     });
 
-    // 언어를 업데이트하는 함수
-    function updateLanguage(language) {
-        // 번역된 텍스트 적용
-        const translation = translations[language];
-        document.getElementById('description').innerHTML = translation.description;
-        document.querySelector('p2 a[href="https://www.instagram.com/yejin.wip?igsh=b2xyaHJpeG9zMTlm"]').innerHTML = translation.instagram;
-        document.querySelector('p2 a[href="https://yejinschoi.com/"]').innerHTML = translation.website;
-
-        // 언어에 맞게 lang 속성 업데이트
+    // 언어에 맞게 lang 속성 업데이트
         document.documentElement.lang = language;
 
         // 버튼에 active 클래스를 적용해 밑줄 표시
         if (language === 'ko') {
-            koButton.classList.add('active');
-            enButton.classList.remove('active');
+            koButton.className = koButton.className.replace('active', '') + ' active';
+            enButton.className = enButton.className.replace('active', '');
         } else if (language === 'en') {
-            enButton.classList.add('active');
-            koButton.classList.remove('active');
+            enButton.className = enButton.className.replace('active', '') + ' active';
+            koButton.className = koButton.className.replace('active', '');
         }
 
-        // 언어 설정을 로컬 스토리지에 저장
-        localStorage.setItem('language', language);
+        // 언어 설정을 로컬 스토리지에 저장 (예외 처리 추가)
+        try {
+            localStorage.setItem('language', language);
+        } catch (error) {
+            console.error("LocalStorage not available:", error);
+        }
     }
 
     // 페이지가 로드될 때, 로컬 스토리지에서 언어 값 가져오기
