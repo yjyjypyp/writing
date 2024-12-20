@@ -42,29 +42,38 @@ body::-webkit-scrollbar {
   position: fixed;
   width: 100%;
   z-index: 11;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 0vw; /* 왼쪽/오른쪽 여백을 vw로 설정하여 유동적 배치 */
+  bottom: 5vh; /* 화면 하단에서 5vh 만큼 떨어지도록 설정 */
 }
 
+/* 왼쪽 네비게이션 */
 .nav-left {
-  position: fixed;  /* 화면에 고정 */
-  top: 65vh;  /* 화면의 65% 위치에서 시작 */
-  left: 0;  /* 화면 왼쪽 끝 */
+  position: absolute;  /* absolute로 위치 고정 */
+  bottom: 5vh; /* 화면 하단에서 5vh 떨어지도록 설정 */
+  left: 5vw; /* 화면 왼쪽에서 5vw 만큼 떨어지게 설정 */
+  z-index: 11;
   display: flex;
-  flex-direction: column;  /* 세로로 정렬 */
-  align-items: flex-start;  /* 왼쪽 정렬 */
-  z-index: 11;  /* 다른 요소들보다 위에 표시되도록 */
-  padding-left: 5vw;  /* 왼쪽 여백 (원하는 만큼 조절) */
-  height: auto;  /* 높이는 자동으로 콘텐츠 크기에 맞게 조정 */
-  width: auto;   /* 너비는 자동으로 콘텐츠에 맞게 조정 */
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: auto;
+  width: auto;
 }
+
+/* 오른쪽 네비게이션 */
 .nav-right {
-	position: fixed; /* 화면에 고정 */
-  top: 86.2vh; /* 화면의 65% 위치에서 시작 */
-  right: 3vw; /* 화면 우측에서 5vw 만큼 떨어지게 설정 */
+  position: absolute;  /* absolute로 위치 고정 */
+  bottom: 5vh; /* 화면 하단에서 5vh 떨어지도록 설정 */
+  right: 3vw; /* 화면 오른쪽에서 5vw 만큼 떨어지게 설정 */
+  z-index: 11;
   display: flex;
-  justify-content: flex-end; /* 오른쪽 끝에 배치 */
-  z-index: 11; /* 다른 요소들보다 위에 표시되도록 */
-	height: auto;  /* 높이는 자동으로 콘텐츠 크기에 맞게 조정 */
-  width: auto;   /* 너비는 자동으로 콘텐츠에 맞게 조정 */
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: auto;
+  width: auto;
 }
 .menu-btn {
     background: none;           /* 배경 제거 */
@@ -76,8 +85,8 @@ body::-webkit-scrollbar {
     outline: none;              /* 포커스 상태의 테두리 제거 */
 }
 .nav a {
-	font-size: 8rem;
-	line-height: 7rem;
+	font-size: 10rem;
+	line-height: 9rem;
 	 cursor: pointer;
 	color: black;
 }
@@ -129,7 +138,7 @@ body::-webkit-scrollbar {
             left: -10%;                /* 원을 살짝 덮도록 조정 */
             z-index: 2;                 /* 스프링을 아래로 */
         }
-@media (min-width: 768px) and (max-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
 	/*--tablet css--*/
 	.langexchange {
 		padding-top: .6vh;
@@ -149,17 +158,24 @@ body::-webkit-scrollbar {
 	.bodytext {
 	grid-column: 4 / span 7;  /* 8-10번째 칸에 걸쳐 배치 */
 	}
-	.nav-left {
-  top: 73vh;  /* 화면의 65% 위치에서 시작 */
-  left: 0;  /* 화면 왼쪽 끝 */
-  padding-left: 9vw;  /* 왼쪽 여백 (원하는 만큼 조절) */
+.nav {
+    padding: 2vw 5%; /* 아이패드에서는 여백을 조정 */
+  }
+
+  .nav-left {
+    font-size: 6vw; /* 아이패드 화면에 맞춘 폰트 크기 */
+    left: 3vw;
+    bottom: 5vh; /* 아이패드에서도 하단에서 5vh 위치 유지 */
+  }
+
+  .nav-right {
+    font-size: 6vw; /* 아이패드 화면에 맞춘 폰트 크기 */
+    right: 0vw;
+    bottom: 5vh; /* 아이패드에서도 하단에서 5vh 위치 유지 */
+  }
+
 }
-.nav-right {
-  top: 88.7vh; /* 화면의 65% 위치에서 시작 */
-  right: 5vw; /* 화면 우측에서 5vw 만큼 떨어지게 설정 */
-	}
-}
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
 	/*-mobile css-*/
 	.section-binding {
             grid-template-rows: repeat(25, 1fr); /* 30개의 동일한 행 */
@@ -202,19 +218,21 @@ body::-webkit-scrollbar {
 	/*padding-right: 2%;*/
 	padding-right: 4%;
 }
-	.nav-left {
-  top: 76vh;  /* 화면의 65% 위치에서 시작 */
-  left: 0;  /* 화면 왼쪽 끝 */
-  padding-left: 9vw;  /* 왼쪽 여백 (원하는 만큼 조절) */
-}
-.nav-right {
-  top: 88.7vh; /* 화면의 65% 위치에서 시작 */
-  right: 5vw; /* 화면 우측에서 5vw 만큼 떨어지게 설정 */
-}
+.nav {
+    padding: 5vw 3%; /* 모바일 여백 */
+  }
+
+  .nav-left {
+    left: 7vw;
+    bottom: 5vh; /* 모바일에서도 하단에서 5vh 위치 유지 */
+  }
+
+  .nav-right {
+    right: 1vw;
+    bottom: 5vh; /* 모바일에서도 하단에서 5vh 위치 유지 */
+  }
 	.nav a {
-	font-size: 4rem;
-	line-height: 3.5rem;
-	 cursor: pointer;
-	color: black;
+	font-size: 5rem;
+	line-height: 4.5rem;
 }
 }
