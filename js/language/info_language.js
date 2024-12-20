@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 텍스트 및 링크 번역
     const translations = {
         en: {
-            description: 'Over the years, I’ve kept journals, reading notes, and sketches—records of my thoughts and daily life. From time to time, I’ve found myself wanting to share some of these with others. After much thought on how to share them, I decided to create this small space. What you’ll find here might be personal reflections, critiques, poetry, short stories, or illustrations—who knows?<br><br>Life is unpredictable, and tomorrow often feels uncertain. But as I continue to gather and organize my thoughts and records, I hope something meaningful will eventually come into focus.<br><br><br><br><br><br><br><br><br>',
+            description: 'Over the years, I’ve kept journals, reading notes, and sketches—records of my thoughts and daily life. From time to time, I’ve found myself wanting to share some of these with others. After much thought on how to share them, I decided to create this small space. What you’ll find here might be personal reflections, critiques, poetry, short stories, or illustrations—who knows?<br><br>Life is unpredictable, and tomorrow often feels uncertain. But as I continue to gather and organize my thoughts and records, I hope something meaningful will eventually come into focus.',
             instagram: '@yejin.wip',
             website: '▫ yejinschoi.com ↗',
         },
