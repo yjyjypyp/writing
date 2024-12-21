@@ -80,7 +80,7 @@
     gap: 1rem; /* 이미지 사이 간격 */
     grid-column: 1 / span 10; /* 전체 너비 차지 */
     grid-auto-rows: auto; /* 자동 높이 조정 */
-    grid-auto-flow: column; /* 열 방향으로 이미지 쌓이게 설정 */
+    /*grid-auto-flow: column; 열 방향으로 이미지 쌓이게 설정 */
     justify-items: end; /* 이미지들을 우측 정렬 */
     align-items: start; /* 이미지들을 상단에 정렬 */
     width: 100%; /* 부모 요소 기준으로 너비 */
@@ -144,29 +144,30 @@
     transform: translate(-50%, -50%);
     background-color: rgba(0, 0, 0, 0); /* 투명 배경 */
     z-index: 1000; /* 팝업이 가장 위에 오도록 */
-    padding: 20px;
+    padding: 0px;
     border-radius: 8px;
     text-align: center;
+	width: 65vw;
+	height: auto;
 }
 
 .popup img {
-    width: 90%; /* 팝업 이미지 크기 */
+    width: 100%; /* 팝업 이미지 크기 */
     height: auto;  
-	box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.6); /* 그림자 추가 */
+	box-shadow: 0px 56px 56px rgba(0, 0, 0, 0.8); /* 그림자 추가 */
     border-radius: 2px; /* 모서리를 약간 둥글게 */
 }
-
 .popup .close-btn {
     position: absolute;
-    top: -10px;
+    top: 0px;
     right: 10px;
     background-color: transparent; /* 배경을 투명하게 */
     border: none; /* 테두리 제거 */
     border-radius: 50%; /* 둥근 모서리 유지 */
     padding: 10px;
     cursor: pointer;
-    font-size: 1.5rem;
-    color: rgba(0, 0, 0, 1); /* 버튼 텍스트 색상 */
+    font-size: 2rem;
+    color: rgba(0, 0, 0, .8); /* 버튼 텍스트 색상 */
 }
 
 /* 팝업을 보이도록 설정 */
@@ -180,12 +181,14 @@
 @media (min-width: 768px) and (max-width: 1024px) {
 	/*--tablet css--*/
 	.bodyimg {
-    display: grid;
     grid-template-columns: repeat(2, 1fr); /* 가로 3개의 열 */
 	}
 }
 @media (max-width: 767px) {
 	/*-mobile css-*/
+	.container {
+		justify-content: space-around;
+	}
 	.section-contents {
 	 display: grid;
     grid-template-columns: repeat(1, 1fr);  /* 10개의 가로 칸 생성 */
@@ -221,12 +224,25 @@
     flex-wrap: wrap;
     gap: .5rem;  /* 이미지 사이 간격 */
     grid-column: 1 / span 10; /* 10개의 칸을 모두 차지 */
+		justify-items: center; /* 이미지들을 우측 정렬 */
 }
 	.popup img {
 		width: 80vw;
 		 max-width: 80vw; /* 최대 너비 제한 */
 		height: auto; /* 비율 유지 */
 	}
+	.popup .close-btn {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    background-color: transparent; /* 배경을 투명하게 */
+    border: none; /* 테두리 제거 */
+    border-radius: 50%; /* 둥근 모서리 유지 */
+    padding: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    color: rgba(0, 0, 0, .8); /* 버튼 텍스트 색상 */
+}
 	.bodytext p2 {
 		display: flex;
 	}
