@@ -115,6 +115,9 @@
 .bodyimg img:hover {
     filter: brightness(0.5); /* 이미지 밝기를 50%로 낮추어 어둡게 */
 }
+.bodyimg img:visted {
+    filter: brightness(1); /* 이미지 밝기를 50%로 낮추어 어둡게 */
+}
 
 /* 이미지 제목 */
 .bodyimg .image-title {
