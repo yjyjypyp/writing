@@ -225,6 +225,8 @@
     gap: .5rem;  /* 이미지 사이 간격 */
     grid-column: 1 / span 10; /* 10개의 칸을 모두 차지 */
 		justify-items: center; /* 이미지들을 우측 정렬 */
+		margin-top: 6vh;
+		padding-bottom: 8vh;
 }
 	.popup {
 		width: 100vw; /* 화면의 90% 너비 */
