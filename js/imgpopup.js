@@ -64,4 +64,6 @@ function addImage(imgSrc, title) {
 }
 
  // 최근 이미지를 위에 배치
-//addImage('../img/episode_img/100_0123.JPG', 'Ep.001 - Thoughts about places');
+addImage('../img/episode_img/100_1795.JPG', 'Belongings, 21.12.24');
+addImage('../img/episode_img/100_1786.JPG', 'Lost and found, 21.12.24');
+addImage('../img/episode_img/100_1806.JPG', 'Life, 21.12.24');
