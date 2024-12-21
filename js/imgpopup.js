@@ -14,10 +14,11 @@ popup.addEventListener('click', (e) => {
 // 이미지 클릭 시 큰 이미지 보기
 const imageContainer = document.querySelector('.bodyimg');
 
-// 이미지 클릭 시 팝업을 띄우고 닫기 버튼을 추가
+// 이미지 클릭 시 팝업을 띄우고 닫기 버튼과 제목을 추가
 imageContainer.addEventListener('click', (e) => {
     if (e.target.tagName === 'IMG') {
         const imgSrc = e.target.src;
+        const imgTitle = e.target.nextSibling.textContent; // 이미지 제목 가져오기
 
         // 팝업 내용 초기화 (이전에 열린 이미지가 있을 경우)
         popup.innerHTML = '';
@@ -26,6 +27,12 @@ imageContainer.addEventListener('click', (e) => {
         const largeImage = document.createElement('img');
         largeImage.src = imgSrc;
         popup.appendChild(largeImage);
+
+        // 제목 추가
+        const titleDiv = document.createElement('div');
+        titleDiv.classList.add('popup-title');
+        titleDiv.textContent = imgTitle;
+        popup.appendChild(titleDiv);
 
         // 닫기 버튼 생성
         const closeBtn = document.createElement('button');
@@ -37,6 +44,7 @@ imageContainer.addEventListener('click', (e) => {
         popup.classList.add('show');
     }
 });
+
 
 // 이미지 추가 함수
 function addImage(imgSrc, title) {
