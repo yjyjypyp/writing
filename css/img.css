@@ -172,6 +172,23 @@
     font-size: 2rem;
     color: rgba(0, 0, 0, .8); /* 버튼 텍스트 색상 */
 }
+/* 팝업 제목 스타일 */
+.popup-title {
+    position: absolute;
+    bottom: 10px; /* 이미지 하단에서 여백 */
+    left: 50%; /* 중앙 정렬 */
+    transform: translateX(-50%); /* 중앙 정렬을 위한 변환 */
+    background-color: rgba(0, 0, 0, 0); /* 반투명 배경 */
+    color: white; /* 텍스트 색상 */
+    padding: 10px 20px; /* 내부 여백 */
+    font-size: 1.2rem; /* 텍스트 크기 */
+    font-family: 'TranseptV01VF', sans-serif;
+    font-style: italic;
+    font-weight: 50;
+    border-radius: 2px; /* 둥근 모서리 */
+    z-index: 1001; /* 이미지 위에 표시되도록 설정 */
+    pointer-events: none; /* 제목이 마우스 이벤트를 받지 않도록 설정 */
+}
 
 /* 팝업을 보이도록 설정 */
 .popup.show {
