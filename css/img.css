@@ -181,7 +181,7 @@
     background-color: rgba(0, 0, 0, 0); /* 반투명 배경 */
     color: white; /* 텍스트 색상 */
     padding: 10px 20px; /* 내부 여백 */
-    font-size: 1.2rem; /* 텍스트 크기 */
+    font-size: 1rem; /* 텍스트 크기 */
     font-family: 'TranseptV01VF', sans-serif;
     font-style: italic;
     font-weight: 50;
@@ -272,6 +272,10 @@
     font-size: 2rem;
     color: rgba(0, 0, 0, .5); /* 버튼 텍스트 색상 */
 }
+	.popup-title {
+		bottom: 4px; /* 이미지 하단에서 여백 */
+		font-size: .8rem;
+	}
 	.bodytext p2 {
 		display: flex;
 	}
