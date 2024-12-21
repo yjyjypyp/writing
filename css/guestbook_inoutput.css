@@ -56,6 +56,7 @@ button:hover {
   max-height: 80vh; /* 전체 포스트잇 목록이 차지하는 최대 높이 */
 	overflow-y: auto; /* 포스트잇들이 넘칠 경우 스크롤 가능 */
 	font-family: 'TranseptV01VF', 'Helvetica Neue', 'Noto Sans KR','ヒラギノ角ゴシック', sans-serif;
+	margin-bottom: 5%;       /* 하단 여백 */
 }
 
 .post-it {
@@ -104,8 +105,9 @@ button:hover {
 }
 @media (max-width: 767px) {
 	.input-section {
-  grid-row: 3;
-		margin-top: 2vh;
+  	grid-row: 3;
+		grid-column: 1 / span 10;  /* 8-10번째 칸에 걸쳐 배치 */
+	margin-top: 5vh;
 }
 	/* 포스트잇 컨테이너 스타일 */
 .post-it-board {
