@@ -202,6 +202,7 @@
 	/*--tablet css--*/
 	.bodyimg {
     grid-template-columns: repeat(2, 1fr); /* 가로 3개의 열 */
+		margin-bottom: 12vh;
 	}
 }
 @media (max-width: 767px) {
