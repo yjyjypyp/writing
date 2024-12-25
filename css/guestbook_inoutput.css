@@ -121,6 +121,7 @@ button:hover {
 	overflow-y: auto; /* 포스트잇들이 넘칠 경우 스크롤 가능 */
 	    padding-left: 0vw;
     padding-right: 4vw;
+	padding-bottom: 20vh;
 }
 
 .post-it {
