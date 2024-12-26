@@ -7,12 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const translations = {
         en: {
             description: 'For quite some time, I’ve been keeping journals, reading notes, and scribbles – records of thoughts and moments that sometimes felt too precious to keep to myself. I wondered how I might share them, and after much thought, I decided to create a website. The words here may be deeply personal or critical, poetic or visual, or perhaps something else entirely. Life is unpredictable, and tomorrow remains uncertain, but I hope that as these thoughts and records accumulate, something clear and meaningful might emerge.',
-            instagram: '@yejin.wip',
+            instagram: '@sansan.wip',
             website: '▫ yejinschoi.com ↗',
         },
         ko: {
             description: '오랜 기간 일기, 독서노트, 낙서 등의 기록들을 해오면서 때로는 공유하고 나누고 싶은 마음과 생각들이 있었습니다. 어떻게 나눌 수 있을까 그 형태를 오래 고민하다가 이렇게 작은 공간을 만들어봤어요. 사적인 글이 될 수도, 비평이 될 수도, 시나 소설, 그림이 될 수도 있겠네요. <br>당장의 내일도 모르겠는 인생이지만, 생각과 기록이 쌓이게 되면 무언가는 선명해질 수도 있기를 기대해봅니다.',
-            instagram: '@yejin.wip',
+            instagram: '@sansan.wip',
             website: '▫ yejinschoi.com &#x2197;',
         }
     };
@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const translation = translations[language];
         document.getElementById('ep001').innerHTML = translation.ep001;
         document.getElementById('ep000').innerHTML = translation.ep000;
-        document.querySelector('p2 a[href="https://www.instagram.com/yejin.wip?igsh=b2xyaHJpeG9zMTlm"]').innerHTML = translation.instagram;
+        document.querySelector('p2 a[href="https://www.instagram.com/sansan.wip?igsh=b2xyaHJpeG9zMTlm"]').innerHTML = translation.instagram;
         document.querySelector('p2 a[href="https://yejinschoi.com/"]').innerHTML = translation.website;
 
         // 언어에 맞게 lang 속성 업데이트

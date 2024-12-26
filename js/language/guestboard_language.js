@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
         ko: {
             messageInput: '메세지를 입력하세요',
 			submitMessage: '추가',
-            instagram: '@yejin.wip',
+            instagram: '@sansan.wip',
             website: '▫ yejinschoi.com &#x2197;',
         }
     };

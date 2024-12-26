@@ -7,13 +7,13 @@ document.addEventListener('DOMContentLoaded', function () {
         en: {
             ep001: 'Reflections on Space',
             ep000: 'Our notes',
-            instagram: '@yejin.wip',
+            instagram: '@sansan.wip',
             website: '▫ yejinschoi.com ↗',
         },
         ko: {
             ep001: '공간에 대한 생각',
             ep000: '우리들의 기록',
-            instagram: '@yejin.wip',
+            instagram: '@sansan.wip',
             website: '▫ yejinschoi.com &#x2197;',
         }
     };
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
         const translation = translations[language];
         document.getElementById('ep001').innerHTML = translation.ep001;
         document.getElementById('ep000').innerHTML = translation.ep000;
-        document.querySelector('p2 a[href="https://www.instagram.com/yejin.wip?igsh=b2xyaHJpeG9zMTlm"]').innerHTML = translation.instagram;
+        document.querySelector('p2 a[href="https://www.instagram.com/sansan.wip?igsh=b2xyaHJpeG9zMTlm"]').innerHTML = translation.instagram;
         document.querySelector('p2 a[href="https://yejinschoi.com/"]').innerHTML = translation.website;
 
         // 언어에 맞게 lang 속성 업데이트
