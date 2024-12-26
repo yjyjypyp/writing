@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 텍스트 및 링크 번역
     const translations = {
         en: {
-            description: 'Reflections on Space<br><br>The translation will be updated soon. Sorry for your inconvenience',
+            description: 'Reflections on Space<br><br>The original text is written in Korean. You can use Chromes auto-translate feature to read it. An updated translation will be provided soon. We apologize for any inconvenience.',
             commentinfo: 'You can check the comments from here',
             messageInput: 'Write your comments',
             submitMessage: 'Add',
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
 			commentinfo: '남겨주신 이야기들은 여기서 확인하실 수 있습니다',
 			messageInput: '메세지를 입력하세요',
 			submitMessage: '추가',
-            instagram: '@yejin.wip',
+            instagram: '@sansan.wip',
             website: '▫ yejinschoi.com &#x2197;',
         }
     };
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('commentinfo').innerHTML = translation.commentinfo;
         document.getElementById('messageInput').placeholder = translation.messageInput;
         document.getElementById('submitMessage').innerHTML = translation.submitMessage;
-        document.querySelector('p2 a[href="https://www.instagram.com/yejin.wip?igsh=b2xyaHJpeG9zMTlm"]').innerHTML = translation.instagram;
+        document.querySelector('p2 a[href="https://www.instagram.com/sansan.wip?igsh=b2xyaHJpeG9zMTlm"]').innerHTML = translation.instagram;
         document.querySelector('p2 a[href="https://yejinschoi.com/"]').innerHTML = translation.website;
 
         // 언어에 맞게 lang 속성 업데이트
