@@ -17,7 +17,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
-const adminPassword = "0125"; // 관리자 비밀번호
+const adminPassword = "6237"; // 관리자 비밀번호
 const postItBoard = document.getElementById('postItBoard');
 
 // 메시지 추가 함수

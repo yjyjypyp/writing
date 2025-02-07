@@ -63,7 +63,7 @@ const loadMessages = async () => {
 // 삭제 확인 함수
 const confirmDelete = (messageId) => {
   const userPassword = prompt('관리자 비밀번호를 입력하세요:');
-  const adminPassword = "0125"; // 관리자 비밀번호
+  const adminPassword = "6237"; // 관리자 비밀번호
 
   if (userPassword === adminPassword) {
     deleteMessage(messageId);
