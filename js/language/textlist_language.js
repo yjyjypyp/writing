@@ -5,12 +5,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // 텍스트 및 링크 번역
     const translations = {
         en: {
+			ep002: 'The Thread',
             ep001: 'Reflections on Space',
             ep000: 'Our notes',
             instagram: '@sansan.wip',
             website: '▫ yejinschoi.com ↗',
         },
         ko: {
+			ep002: '끈',
             ep001: '공간에 대한 생각',
             ep000: '우리들의 기록',
             instagram: '@sansan.wip',
@@ -31,6 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateLanguage(language) {
         // 번역된 텍스트 적용
         const translation = translations[language];
+		document.getElementById('ep002').innerHTML = translation.ep002;
         document.getElementById('ep001').innerHTML = translation.ep001;
         document.getElementById('ep000').innerHTML = translation.ep000;
         document.querySelector('p2 a[href="https://www.instagram.com/sansan.wip?igsh=b2xyaHJpeG9zMTlm"]').innerHTML = translation.instagram;
