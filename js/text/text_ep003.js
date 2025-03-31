@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
         ko: {
             description: '',
+			commentinfo: '남겨주신 이야기들은 여기서 확인하실 수 있습니다',
 			messageInput: '메세지를 입력하세요',
 			submitMessage: '추가',
             instagram: '@sansan.wip',
