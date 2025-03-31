@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // 텍스트 및 링크 번역
     const translations = {
         en: {
+			ep003: 'For the One Who Has Forgotten to Ask',
 			ep002: 'The Thread',
             ep001: 'Reflections on Space',
             ep000: 'Our notes',
@@ -12,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
             website: '▫ yejinschoi.com ↗',
         },
         ko: {
+			ep003: '나를 더이상 궁금해하지 않는 당신에게',
 			ep002: '끈',
             ep001: '공간에 대한 생각',
             ep000: '우리들의 기록',
@@ -33,6 +35,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateLanguage(language) {
         // 번역된 텍스트 적용
         const translation = translations[language];
+		document.getElementById('ep003').innerHTML = translation.ep003;
 		document.getElementById('ep002').innerHTML = translation.ep002;
         document.getElementById('ep001').innerHTML = translation.ep001;
         document.getElementById('ep000').innerHTML = translation.ep000;
