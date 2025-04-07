@@ -189,4 +189,15 @@
 	.bodytext a:visited {
 		text-decoration: none;
 	}
+	.visitor-counter {
+    bottom: 1vh; /* 화면 하단에서 10px 위 */
+	}
+	.visitor-counter span {
+	font-size: .7rem;
+    line-height: .85rem;
+	}
+	.visitor-counter p1 {
+    font-size: .7rem;
+    line-height: .85rem;
+	}
 }
