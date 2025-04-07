@@ -16,7 +16,81 @@
 <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
 <link rel="manifest" href="favicon/site.webmanifest">
+	<!-- Firebase SDK 로드 -->
+<!-- ✅ Firebase 방문자 카운터 -->
+<script type="module">
+  // 1. Firebase SDK 불러오기
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+  import { getDatabase, ref, get, runTransaction } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
+
+  // 2. 🔥 Firebase 설정값 (lifeitsbeautiful 전용)
+  const firebaseConfig = {
+    apiKey: "AIzaSyDLwtXjMmdoIInz8Bpt3uFMhzzqlB_hC8U",
+    authDomain: "lifeitsbeautiful-visitor.firebaseapp.com",
+    databaseURL: "https://lifeitsbeautiful-visitor-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "lifeitsbeautiful-visitor",
+    storageBucket: "lifeitsbeautiful-visitor.firebasestorage.app",
+    messagingSenderId: "912263339490",
+    appId: "1:912263339490:web:81987f1ece25ab362c2dbb"
+  };
+
+  // 3. Firebase 초기화
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+
+  // 4. 오늘 날짜 (UTC 기준 "YYYY-MM-DD")
+  function getTodayDateUTC() {
+    let now = new Date();
+    return now.toISOString().split("T")[0];
+  }
+
+  const todayDate = getTodayDateUTC();
+  const siteKey = "lifeitsbeautiful"; // 사이트 고유 키
+
+  // 5. Firebase 경로 지정
+  const totalRef = ref(database, `visitorCount/${siteKey}/total`);
+  const todayRef = ref(database, `visitorCount/${siteKey}/daily/${todayDate}`);
+
+  // 6. 방문자 수 표시 함수
+  function updateVisitorCount() {
+    get(totalRef).then((snapshot) => {
+      let count = snapshot.val() || 0;
+      document.getElementById("totalCount").innerText = count;
+    });
+
+    get(todayRef).then((snapshot) => {
+      let count = snapshot.val() || 0;
+      document.getElementById("todayCount").innerText = count;
+    });
+  }
+
+  // 7. 방문자 수 증가 (중복 방문 방지)
+  async function addVisitor() {
+    let updated = false;
+
+    if (!sessionStorage.getItem("visited")) {
+      sessionStorage.setItem("visited", "true");
+      await runTransaction(totalRef, (c) => (c || 0) + 1);
+      updated = true;
+    }
+
+    if (!sessionStorage.getItem("visited_today")) {
+      sessionStorage.setItem("visited_today", "true");
+      await runTransaction(todayRef, (c) => (parseInt(c) || 0) + 1);
+      updated = true;
+    }
+
+    if (updated) updateVisitorCount();
+  }
+
+  // 8. 실행
+  updateVisitorCount();
+  addVisitor();
+</script>
+
+</script>
 </head>
+	
 <body>
     <div class="container">
 		<div class="langexchange">
@@ -42,6 +116,11 @@
 			<div class="minitext minitext2"><p1>Welcome!</p1></div>
 			<div class="minitext minitext3"><a href="html/guestboard.html"<p1>Guestboard</p1></a></div>
 		</div>
+	<!-- ✅ 방문자 카운트 (우측 하단 고정) -->
+    <div class="visitor-counter">
+        <p1>T: <span id="todayCount">0</span>&nbsp&nbsp&nbsp&nbsp T: <span id="totalCount">0</span></p1>
+        <p1>Count started on 07 Apr 2025</p1>
+    </div>
 	</div>
 </body>
 
