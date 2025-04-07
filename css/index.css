@@ -190,7 +190,8 @@
 		text-decoration: none;
 	}
 	.visitor-counter {
-    bottom: .8vh; /* 화면 하단에서 10px 위 */
+    bottom: .85vh; /* 화면 하단에서 10px 위 */
+	right: 4vw; /* 화면 오른쪽에서 3vw 왼쪽 */
 	}
 	.visitor-counter span {
 	font-size: .7rem;
