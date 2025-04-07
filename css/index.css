@@ -91,6 +91,40 @@
 .bodytext p2 {
 	display: none;
 }
+/* ✅ 방문자 카운트 (우측 하단 고정) */
+.visitor-counter {
+	display: block;
+    position: absolute;
+    bottom: 1.5vh; /* 화면 하단에서 10px 위 */
+    right: 2.5vw; /* 화면 오른쪽에서 3vw 왼쪽 */
+    min-width: 120px; /* ✅ 최소 너비 설정 (숫자가 겹치지 않도록) */
+	/*border: 1px solid blue;*/
+}
+.center-content p1, button, .instagram-btn{
+    font-family: 'Helvetica Neue','Noto Sans KR', 'sans-serif';
+    font-size: .8rem;
+    line-height: .95rem;
+    text-align: center;
+    color: rgba(0, 0, 0, 0.3);
+    /*text-shadow: 0px 0px 3px rgba(170,255,140,.7), 0px 0px 5px rgba(170,255,140,.2);*/
+}
+.visitor-counter span {
+	font-size: .8rem;
+    line-height: .95rem;
+    color: rgba(0,0,0, 0.3);
+    /*text-shadow: 0px 0px 3px rgba(170,255,140,.7), 0px 0px 5px rgba(170,255,140,.2);*/
+	 letter-spacing: 1px; /* ✅ 글자 간격 조정 */
+}
+.visitor-counter p1 {
+	 text-align: right;
+	display: block;
+    font-family: 'Helvetica Neue','Noto Sans KR', 'sans-serif';
+    font-size: .8rem;
+    line-height: .95rem;
+    color: rgba(0,0,0, 0.3);
+   /* text-shadow: 0px 0px 3px rgba(170,255,140,.7), 0px 0px 5px rgba(170,255,140,.2);*/
+	white-space: nowrap; /* ✅ 숫자가 한 줄로 유지되도록 설정 */
+}
 @media (min-width: 768px) and (max-width: 1024px) {
 	/*--tablet css--*/
 }
