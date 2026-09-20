@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function updateLanguage(language) {
         // 번역된 텍스트 적용
         const translation = translations[language];
-		document.getElementById('ep005').innerHTML = translation.ep005;
 		document.getElementById('ep004').innerHTML = translation.ep004;
 		document.getElementById('ep003').innerHTML = translation.ep003;
 		document.getElementById('ep002').innerHTML = translation.ep002;
