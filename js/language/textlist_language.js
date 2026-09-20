@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // 텍스트 및 링크 번역
     const translations = {
         en: {
-			ep005: 'The Hypocrisy and Rudeness Behind "Poor Thing"',
 			ep004: 'Seasonal Musing',
 			ep003: 'For the One Who Has Forgotten to Ask',
 			ep002: 'The Thread',
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function () {
             website: '▫ yejinschoi.com ↗',
         },
         ko: {
-			ep005: '불쌍하는 말에 담긴 위선과 무례함<br>ー「かわいそう」に潜む偽善と無礼',
 			ep004: '계절의 단상들ー季節の考察',
 			ep003: '나를 더이상 궁금해하지 않는 당신에게',
 			ep002: '끈',
